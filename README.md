@@ -5,6 +5,10 @@ compatible with the Fluke 287 and 289. It connects the meter to
 [Multimeter Viewer](https://github.com/irii/multimeter-viewer) over
 Bluetooth LE or USB.
 
+<p align="center">
+  <img src="assets/28x-ir-dongle-preview.png" alt="The IR dongle in its printed case with a USB-C cable" width="60%">
+</p>
+
 | Folder                                             | Contents                                   |
 |----------------------------------------------------|--------------------------------------------|
 | [28x-ir-dongle](28x-ir-dongle)                     | 3D-printable holder (STL)                  |
