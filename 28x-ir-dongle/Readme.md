@@ -44,3 +44,13 @@ photos. For flashing and troubleshooting, see the
 <p align="center">
   <img src="../assets/28x-ir-dongle-preview-assembly-help.png" alt="Photos of the dongle: fitted to the meter, the case from both ends, the wired board and the IR holder" width="70%">
 </p>
+
+> [!NOTE]
+> The BC547B in the photo is fitted with collector and emitter swapped. The
+> dongle still works this way, so it's not a problem, but follow the schematic
+> when you build yours.
+
+The exact wiring is hard to show in photos, so use them as a rough guide. My
+tip: before you start soldering, take a moment to plan how to route the wires
+and where each part will sit. Plan the heat-shrink tubing too and slide it on
+before you solder, because the many branches make that hard to do later.
