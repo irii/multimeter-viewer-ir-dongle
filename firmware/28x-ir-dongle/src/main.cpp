@@ -14,6 +14,10 @@
 #include <NimBLEDevice.h>
 #include <driver/uart.h>
 #include <freertos/stream_buffer.h>
+#include <soc/soc_caps.h>
+#if __has_include(<driver/gpio_filter.h>)
+#include <driver/gpio_filter.h>
+#endif
 
 // --- Configuration ---------------------------------------------------------
 
@@ -42,6 +46,13 @@
 #endif
 #ifndef IR_ECHO_SUPPRESS_US
 #define IR_ECHO_SUPPRESS_US 200
+#endif
+
+// Ignores pulses on the receiver pin shorter than this (ns), e.g. 500;
+// 0 = off. Uses the chip's flex glitch filter (ESP32-C6, -H2, -P4), up to
+// 1600 ns. A bit at 115200 baud is 8680 ns, so stay well below that.
+#ifndef IR_RX_GLITCH_NS
+#define IR_RX_GLITCH_NS 0
 #endif
 
 // Optional LED that is on while the app is connected; -1 = none.
@@ -194,6 +205,28 @@ static void updateLink() {
 
 // --- IR --------------------------------------------------------------------
 
+static void setupRxGlitchFilter() {
+#if IR_RX_GLITCH_NS > 0
+#if defined(SOC_GPIO_FLEX_GLITCH_FILTER_NUM) && SOC_GPIO_FLEX_GLITCH_FILTER_NUM > 0
+  // The XTAL clock (40 MHz) allows the longest window: 64 cycles, 1600 ns.
+  gpio_flex_glitch_filter_config_t config = {};
+  config.clk_src = GLITCH_FILTER_CLK_SRC_XTAL;
+  config.gpio_num = static_cast<gpio_num_t>(IR_RX_PIN);
+  config.window_width_ns = IR_RX_GLITCH_NS;
+  config.window_thres_ns = IR_RX_GLITCH_NS;
+  gpio_glitch_filter_handle_t filter;
+  if (gpio_new_flex_glitch_filter(&config, &filter) == ESP_OK &&
+      gpio_glitch_filter_enable(filter) == ESP_OK) {
+    LOG("RX glitch filter: %d ns\n", IR_RX_GLITCH_NS);
+  } else {
+    LOG("RX glitch filter: %d ns not possible\n", IR_RX_GLITCH_NS);
+  }
+#else
+#warning "IR_RX_GLITCH_NS: this chip has no flex glitch filter; ignored"
+#endif
+#endif
+}
+
 static void setupIr() {
   ir.begin(kBaud, SERIAL_8N1, IR_RX_PIN, IR_TX_PIN);
   uint32_t inverse = UART_SIGNAL_INV_DISABLE;
@@ -204,6 +237,7 @@ static void setupIr() {
   // UART's hardware FIFO first.
   ir.setRxFIFOFull(1);
   ir.setRxTimeout(1);
+  setupRxGlitchFilter();
 }
 
 static void sendToMeter(const uint8_t *data, size_t length) {

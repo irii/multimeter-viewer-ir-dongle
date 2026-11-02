@@ -149,6 +149,7 @@ Settings in `src/main.cpp` (or as `build_flags` in `platformio.ini`):
 | `IR_RX_INVERT`     | 0       | Receiver pulls the pin low on light                 |
 | `IR_ECHO_SUPPRESS` | 1       | Drops what the receiver sees of the adapter's LED   |
 | `IR_ECHO_SUPPRESS_US` | 200 | How long after sending the echo is still dropped (µs) |
+| `IR_RX_GLITCH_NS` | 0       | Ignore receiver pulses shorter than this (ns, up to 1600; ESP32-C6 only; 0: off) |
 | `STATUS_LED_PIN`   | -1      | LED that is on while the app is connected (-1: off) |
 | `USB_BRIDGE`       | auto    | USB mode; on when `ARDUINO_USB_CDC_ON_BOOT=1`        |
 
