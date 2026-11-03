@@ -1,7 +1,7 @@
 # 28x IR Dongle: Hardware
 
-Everything you need to build the dongle: schematic, parts list and assembly
-photos. For flashing and troubleshooting, see the
+Everything you need to build the dongle: schematic, parts list, 3D-printed
+parts and assembly photos. For flashing and troubleshooting, see the
 [firmware guide](../firmware/28x-ir-dongle/README.md).
 
 ## Schematic
@@ -35,6 +35,23 @@ photos. For flashing and troubleshooting, see the
 
 - AWG 24 wire
 - Heat-shrink tubing
+
+## 3D-printed parts
+
+The files are in the [STL](STL) folder. The number in each file name tells you
+how many to print.
+
+| Qty | File                               | Notes                       |
+|-----|------------------------------------|-----------------------------|
+| 1   | [1x_Plug.stl](STL/1x_Plug.stl)     | **Print vertically**        |
+| 1   | [1x_Shell.stl](STL/1x_Shell.stl)   |                             |
+| 1   | [1x_Cover.stl](STL/1x_Cover.stl)   |                             |
+| 1   | [1x_Sandwich.stl](STL/1x_Sandwich.stl) |                         |
+| 2   | [2x_Spacer.stl](STL/2x_Spacer.stl) |  |
+
+> [!WARNING]
+> Print `1x_Plug.stl` vertically. Layers bond less strongly along the Z axis,
+> so the clips can break if they are printed in any other orientation.
 
 ## Assembly
 
