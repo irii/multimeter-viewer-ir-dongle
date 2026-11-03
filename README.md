@@ -14,9 +14,6 @@ Bluetooth LE or USB.
 | [28x-ir-dongle](28x-ir-dongle)                     | 3D-printable holder (STL)                  |
 | [firmware/28x-ir-dongle](firmware/28x-ir-dongle)   | ESP32 firmware, circuit and troubleshooting |
 
-> **Work in progress.** Sending and receiving work, but reception depends
-> on how exactly the receiver sits in front of the meter's IR window.
-
 ## Personal use only
 
 The 3D models are meant for building an adapter for yourself. You may

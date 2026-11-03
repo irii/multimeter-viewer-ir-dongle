@@ -23,22 +23,10 @@ driver, like the FTDI cable: on Linux and Android the app detaches it; on
 Windows the adapter needs the WinUSB driver (e.g. with Zadig); on macOS
 connecting may fail while Apple's driver holds it.
 
-> **Status: working, still being refined.** Sending and receiving work
-> with the circuit below. How reliably the start of each answer arrives
-> depends on where exactly the receiver sits in front of the meter's IR
-> window, see [Placement](#placement-and-shielding).
-
 ## Hardware
 
-- Any ESP32 with Bluetooth LE (ESP32, ESP32-C3, ESP32-S3, ESP32-C6)
-- IR LED (940 nm, 2 pins) as transmitter
-- IR phototransistor (940 nm, 2 pins) as receiver, often sold as "IR
-  receiver diode" in a set with the LED. Not a 38 kHz receiver module such
-  as a TSOP: the signal is not modulated.
-- Resistors 220 Ω (LED) and 220 Ω (receiver pull-up)
-- Power over USB: a power bank, a charger, or the phone or PC the adapter
-  is connected to. A LiPo battery on a board with a charger works too, but
-  is not needed.
+The parts list and assembly guide are in the
+[hardware folder](../../28x-ir-dongle).
 
 ```
 Transmitter (IR LED)                Receiver (IR phototransistor)
