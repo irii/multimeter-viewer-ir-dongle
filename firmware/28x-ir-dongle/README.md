@@ -61,9 +61,6 @@ All GND connections may go to the same GND pin.
 
 | Board      | IR_TX_PIN | IR_RX_PIN |
 |------------|-----------|-----------|
-| esp32dev   | 17        | 16        |
-| esp32-c3   | 4         | 5         |
-| esp32-s3   | 17        | 18        |
 | esp32-c6   | 1         | 0         |
 
 Other pins work too; set them with `build_flags` in `platformio.ini`. Avoid
