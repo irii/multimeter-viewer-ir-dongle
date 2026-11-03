@@ -17,6 +17,8 @@ Bluetooth LE or USB.
 ## TODO
 
 - [ ] Battery-powered adapter (WIP)
+- [ ] SD card support for extended measurements
+- [ ] USB-C power terminal to replace the battery compartment of the Fluke 287/289, for longer measurements, with shared power for the IR adapter
 
 ## Personal use only
 
