@@ -14,6 +14,10 @@ Bluetooth LE or USB.
 | [28x-ir-dongle](28x-ir-dongle)                     | Schematic, parts list, STL files, assembly |
 | [firmware/28x-ir-dongle](firmware/28x-ir-dongle)   | ESP32 firmware and troubleshooting         |
 
+## TODO
+
+- [ ] Battery-powered adapter (WIP)
+
 ## Personal use only
 
 The 3D models are meant for building an adapter for yourself. You may
