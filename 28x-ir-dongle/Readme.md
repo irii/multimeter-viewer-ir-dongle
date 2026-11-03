@@ -53,6 +53,11 @@ how many to print.
 > Print `1x_Plug.stl` vertically. Layers bond less strongly along the Z axis,
 > so the clips can break if they are printed in any other orientation.
 
+> [!WARNING]
+> Use non-conductive filament only, so avoid conductive, carbon-filled or
+> metal-filled types. I recommend ASA. ABS also works, and PETG is an
+> alternative.
+
 ## Assembly
 
 > [!IMPORTANT]
