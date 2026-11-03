@@ -11,8 +11,8 @@ Bluetooth LE or USB.
 
 | Folder                                             | Contents                                   |
 |----------------------------------------------------|--------------------------------------------|
-| [28x-ir-dongle](28x-ir-dongle)                     | 3D-printable holder (STL)                  |
-| [firmware/28x-ir-dongle](firmware/28x-ir-dongle)   | ESP32 firmware, circuit and troubleshooting |
+| [28x-ir-dongle](28x-ir-dongle)                     | Schematic, parts list, STL files, assembly |
+| [firmware/28x-ir-dongle](firmware/28x-ir-dongle)   | ESP32 firmware and troubleshooting         |
 
 ## Personal use only
 
