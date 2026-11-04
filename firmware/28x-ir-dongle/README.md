@@ -69,8 +69,9 @@ The adapter advertises as `MMV-IR-XXXX` with this service:
 | `077fee1f-2aa0-4b7a-8adb-8c1f7c51310b` | App → meter (write)              |
 | `9612beb0-f6ef-41ee-9a61-d7d51add4703` | Meter → app (notify)             |
 
-The app side is `lib/ble/` (Bluetooth) and `lib/usb/cdc_serial.dart`
-(USB, Espressif vendor ID `0x303A`) in
+The app side is `lib/adapters/ble/` (Bluetooth) and
+`lib/adapters/usb/cdc_serial.dart` (USB), configured in
+`lib/devices/fluke/fluke_device.dart` (Espressif vendor ID `0x303A`), in
 [Multimeter Viewer](https://github.com/irii/multimeter-viewer).
 
 
