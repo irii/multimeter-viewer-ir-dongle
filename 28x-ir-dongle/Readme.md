@@ -28,7 +28,7 @@ parts and assembly photos. For flashing and troubleshooting, see the
 
 | Qty | Part                 | Notes                         |
 |-----|----------------------|-------------------------------|
-| 2   | M3 × 35 mm screw     | The new case will need 30 mm  |
+| 2   | M3 × 30 mm screw     | The new case will need 30 mm  |
 | 2   | M3 × 4 × 4.2 mm heat-set insert |                    |
 
 ### Wiring
